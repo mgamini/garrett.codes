@@ -1,0 +1,168 @@
+/* Colors:
+black: #000;
+white: #fff;
+main: #1EAEDB;
+
+*/
+
+/* Universal */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  font-family: 'Corben', 'Garamond', serif;
+}
+
+/* OOCSS */
+
+.font-alt { font-family: 'Kaushan Script', cursive; }
+.font-white { color: #fff; }
+.align-center { text-align: center; }
+
+/* Layout */
+
+#homepage {
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  grid-template-rows: 300px 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 0px;
+  min-height: 100vh;
+}
+
+#header {
+  padding: 20px;
+}
+
+#selfie {
+  position: relative;
+}
+
+#selfie > img {
+  position: absolute;
+  width: 85%;
+  bottom: -40px;
+  left: 5%;
+}
+
+/* Header */
+
+.tease {
+  font-size: 1.3em;
+}
+
+.title {
+  margin-top: 60px;
+}
+
+.byline {
+  font-size: 1.7em;
+}
+
+/* Main  */
+
+main {
+  position: relative;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+#content {
+  background: #1EAEDB;
+  height: 100%;
+  border-radius: 20px 0px 0px 0px;
+  padding: 30px;
+}
+
+#description {
+  column-count: 2;
+}
+
+#description > p:first-child::first-letter {
+  font-size: 6em;
+  line-height: 1em;
+  margin-right: .2em;
+  float: left;
+  font-family: 'Kaushan Script', cursive;
+}
+
+#rotating-callout {
+  width: 50%;
+  padding: 0px 10px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+
+#rotating-callout > svg {
+  position: relative;
+  z-index: 1;
+}
+
+#rotating-callout::after {
+  content: ' ';
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #1EAEDB;
+  display: block;
+  border-radius: 80% 0% 0px 0px;
+}
+
+#cta {
+  background: url('../images/cta-frame.svg') no-repeat transparent;
+  width: 250px;
+  height: 250px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px 50px 50px 20px;
+  transform: rotate(-15deg);
+  margin: 50px auto;
+  position: relative;
+}
+
+#cta:hover {
+  top: -3px;
+}
+
+#cta-top {
+  font-size: 1.8em;
+  line-height: 1.2em;
+  margin-bottom: 10px;
+}
+
+#cta-bottom {
+  font-size: 1.2em;
+  color: #000;
+  margin: 10px 0px 0px;
+}
+
+#cta > img {
+  width: 80%;
+}
+/* Sidebar */
+
+#sidebar {
+  background: #000;
+  border-radius: 0px 20px 0px 0px
+}
+
+#selfie {
+  background: #fff;
+  position: relative;
+}
+
