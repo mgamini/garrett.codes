@@ -9,17 +9,17 @@ main: #1EAEDB;
 
 html {
   box-sizing: border-box;
+  min-width: 320px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-html {
-  min-width: 320px;
-}
 
 body {
   font-family: 'Corben', 'Garamond', serif;
+  background: linear-gradient(to bottom, #fff 1%,#e2e2e2 100%);
+  min-width: 320px;
 }
 
 /* OOCSS */
@@ -27,44 +27,27 @@ body {
 .font-alt { font-family: 'Kaushan Script', cursive; }
 .font-white { color: #fff; }
 .align-center { text-align: center; }
+.hide { display: none; }
+.large { display: none; }
 
 /* Layout */
-
-#homepage {
-  display: grid;
-  grid-template-columns: 9fr 3fr;
-  grid-template-rows: 300px 1fr;
-  grid-column-gap: 15px;
-  grid-row-gap: 0px;
-  min-height: 100vh;
-}
 
 #header {
   padding: 20px;
 }
 
-#selfie {
-  position: relative;
-}
-
-#selfie > img {
-  position: absolute;
-  width: 85%;
-  bottom: -40px;
-  left: 5%;
-}
-
 /* Header */
 
-.tease {
+#tease {
   font-size: 1.3em;
 }
 
-.title {
+#title {
   margin-top: 60px;
 }
 
-.byline {
+#byline {
+  width: 50%;
   font-size: 1.7em;
 }
 
@@ -72,7 +55,7 @@ body {
 
 main {
   position: relative;
-  padding-top: 100px;
+  padding-top: 80px;
   overflow: hidden;
 }
 
@@ -81,10 +64,6 @@ main {
   height: 100%;
   border-radius: 20px 0px 0px 0px;
   padding: 30px;
-}
-
-#description {
-  column-count: 2;
 }
 
 #description > p:first-child::first-letter {
@@ -99,14 +78,21 @@ main {
   width: 50%;
   padding: 0px 10px;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  left: 0px;
+  top: 20px;
   overflow: hidden;
+  height: 80px;
 }
 
-#rotating-callout > svg {
+#rotating-callout > p {
   position: relative;
   z-index: 1;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+  font-size: 18px;
+  transform: rotate(8deg);
+  top: 20px;
 }
 
 #rotating-callout::after {
@@ -119,7 +105,7 @@ main {
   height: 100%;
   background: #1EAEDB;
   display: block;
-  border-radius: 80% 0% 0px 0px;
+  border-radius: 0px 80% 0px 0px;
 }
 
 #cta {
@@ -158,11 +144,135 @@ main {
 
 #sidebar {
   background: #000;
-  border-radius: 0px 20px 0px 0px
+  padding: 20px 0px;
 }
 
 #selfie {
-  background: #fff;
   position: relative;
 }
 
+#selfie > img {
+  position: absolute;
+  width: 40%;
+  bottom: -100px;
+  right: 5%;
+  z-index: 2;
+  max-height: 200px;
+}
+
+#sidebar-links {
+  padding: 0px 20px;
+}
+
+#sidebar-links > li {
+  display: block;
+  position: relative;
+  margin: 20px auto;
+  max-width: 65%;
+}
+
+.sidebar-link {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 10px 20px;
+  height: 85px;
+}
+
+#sidebar-links > li::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: skew(10deg);
+  transition: transform 300ms;
+  background: #1EAEDB;
+  z-index: 0;
+}
+
+#sidebar-links > li:nth-child(even)::after {
+  transform: skew(-10deg);
+}
+
+#sidebar-links > li:hover::after, #sidebar-links > li:nth-child(even):hover::after {
+  transform: skew(0deg);
+}
+
+
+.sidebar-link-intro {
+  margin-bottom: 5px;
+}
+
+.sidebar-link-img {
+  display: block;
+  max-height: 35px;
+}
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .large {
+    display: inline;
+  }
+  #homepage {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    grid-template-rows: 300px 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 0px;
+    min-height: 100vh;
+    min-width: 320px;
+  }
+  #byline {
+    width: 100%;
+  }
+  #selfie > img {
+    position: absolute;
+    width: 85%;
+    bottom: -40px;
+    left: 5%;
+    right: auto;
+  }
+  #rotating-callout {
+    left: auto;
+    right: 0px;
+    top: 0px;
+    height: 100px;    
+  }
+  #rotating-callout::after {
+    border-radius: 80% 0px 0px 0px;
+  }  
+  #rotating-callout > p {
+    transform: rotate(-8deg);
+    font-size: 24px;
+    top: 30px;
+  }
+  #description {
+    column-count: 2;
+  }
+  #sidebar {
+    border-radius: 0px 20px 0px 0px;
+    padding-top: 80px;
+  }  
+  #sidebar-links > li {
+    max-width: 100%;
+  }
+  .sidebar-link { 
+    height: auto;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

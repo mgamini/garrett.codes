@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Garrett.codes - Home</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -25,7 +25,23 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
 </head>
 <body>
@@ -34,10 +50,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div id="homepage" class="container">
     <header id="header">
-      <p class="tease">Who can you turn to when something needs building?</p>
+      <p id="tease">Who can you turn to when something needs building?</p>
       <hgroup>
-        <h1 class="title align-center"><img src="images/garrett-amini.svg" alt="Garrett Amini"></h1>
-        <h2 class="byline align-center">Web Developer - <a id="rotating-byline">Amateur Carpenter</a></h2>
+        <h1 id="title" class="align-center"><img src="images/garrett-amini.svg" alt="Garrett Amini"></h1>
+        <h2 id="byline" class="align-center">Web Developer <span class="large"> - </span><span id="rotating-byline"></span></h2>
       </hgroup>
     </header>
     <header id="selfie">
@@ -45,15 +61,6 @@
     </header>
     <main>
       <div id="rotating-callout">
-        <svg class="font-alt" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 -20 229 50" xml:space="preserve">
-        <path id="curve" fill="transparent" d="M0,50C0,50,96,0,229,0""/>
-        <text width="100%" fill="#fff">
-          <textPath id="rotating-callout-text" xlink:href="#curve">
-            Usually Wears Sunscreen!
-          </textPath>
-        </text>
-      </svg>
       </div>
       <section id="content">
         <div id="description">
@@ -72,12 +79,68 @@
       </section>
     </main>
     <aside id="sidebar" class="">
-      <section class="content">          
+      <section class="content">
+        <ul id="sidebar-links">
+          <li>
+            <a href="https://linkedin.com/in/mgamini" class="sidebar-link">
+              <p class="sidebar-link-intro font-alt font-white">Easy to find on:</p>
+              <img class="sidebar-link-img" src="images/logos/linkedin.svg" alt="LinkedIn logo"></a>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/mgamini" class="sidebar-link">
+              <p class="sidebar-link-intro font-alt font-white">See the action at:</p>
+              <img class="sidebar-link-img" src="images/logos/github.svg" alt="GitHub logo"></a>
+            </a>
+          </li>
+          <li>
+            <a href="https://dribbble.com/mgamini" class="sidebar-link">
+              <p class="sidebar-link-intro font-alt font-white">Pixel slinging on:</p>
+              <img class="sidebar-link-img" src="images/logos/dribbble.svg" alt="Dribbble logo"></a>
+            </a>
+          </li>
+          <li>
+            <a href="https://medium.com/@mgamini" class="sidebar-link">
+              <p class="sidebar-link-intro font-alt font-white">Tasty word salads at:</p>
+              <img class="sidebar-link-img" src="images/logos/medium.svg" alt="Medium logo"></a>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/mgamini" class="sidebar-link">
+              <p class="sidebar-link-intro font-alt font-white">Millennial self-worth on:</p>
+              <img class="sidebar-link-img" src="images/logos/instagram.svg" alt="Instagram logo"></a>
+            </a>
+          </li>
+        </ul>
       </section>
     </aside>
   </div>
 
+<div class="hide rotator" data-rotation-target="#rotating-byline" >
+  <a href="https://www.instagram.com/p/BTfN4TegRro/" class="rotating-byline-link">Amateur Carpenter</a>
+  <a href="https://youtu.be/dKUglpT9X6A?t=98" class="rotating-byline-link">Soccer Nerd</a>
+  <a href="https://dribbble.com/shots/3691670-Vanderbilt-Logo" class="rotating-byline-link">Board Game Hobbyist</a>
+</div>
+
+<div class="hide rotator" data-rotation-target="#rotating-callout">
+  <p>Usually Wears Sunscreen!</p>
+  <p>Cooks a Mean Hot Sauce!</p>
+  <p>Now with More Experience!</p>
+  <p>Ready For Action!</p>
+</div>
+
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/main.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129264982-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129264982-1');
+</script>
+
 </body>
 </html>
